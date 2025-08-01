@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Entendendo o addEventListener</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 20px;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #006699;
+    }
+
+    section {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #006699;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #005577;
+    }
+
+    #texto {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Entendendo o método addEventListener</h1>
+    <p>
+      O <strong>addEventListener</strong> é uma função que permite escutar eventos em elementos HTML, como cliques, movimentos do mouse, pressionar teclas, entre outros. Quando o evento ocorre, uma função é executada, permitindo que você crie interações dinâmicas na sua página web.
+    </p>
+  </header>
+
+  <section>
+    <h2>Exemplo básico de uso</h2>
+    <p>
+      Neste exemplo, ao clicar no botão, a cor do texto será alterada e uma mensagem será exibida na tela.
+    </p>
+    <!-- Elemento clicável -->
+    <button id="meuBotao">Clique aqui</button>
+    <div id="texto">Este texto mudará de cor ao clicar no botão.</div>
+
+    <!-- Código JavaScript visível na página -->
+    <h3>Código JavaScript:</h3>
+    <pre><code>
+const botao = document.getElementById('meuBotao');
+const texto = document.getElementById('texto');
+
+botao.addEventListener('click', function() {
+  texto.style.color = 'red';
+  alert('Você clicou no botão!');
+});
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>Como funciona o código</h2>
+    <p>
+      O código seleciona o botão e o texto pelo ID. Depois, adiciona um ouvinte de evento de clique ao botão usando <code>addEventListener</code>. Quando o botão é clicado, a função passada como segundo parâmetro é executada, mudando a cor do texto e exibindo um alerta.
+    </p>
+  </section>
+
+  <script>
+    const botao = document.getElementById('meuBotao');
+    const texto = document.getElementById('texto');
+
+    // Adiciona o evento de clique
+    botao.addEventListener('click', function() {
+      texto.style.color = 'red';
+      alert('Você clicou no botão!');
+    });
+  </script>
+</body>
+</html>
